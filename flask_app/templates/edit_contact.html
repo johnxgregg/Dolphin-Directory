@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Create Contact</title>
+    <title>Edit Contact</title>
 </head>
 <body>
     <nav class="d-flex justify-content-between align-items-center col-12">
-        <h1 class="text-center">Dolphin Directory</h1>
+        <h1 class="text-center">Rock On {{user.first_name}}</h1>
         <div class="d-flex col-4 justify-content-around">
             <a href="/dashboard" class="btn btn-info">Home</a>
             <a href="/logout" class="btn btn-info">Logout</a>
         </div>
     </nav>
-    <form action="/create/contact" method="post" class="col-11 p-4 my-4 bg-dark text-light mx-auto">
-        {% with messages = get_flashed_messages(category_filter=['contact']) %}
+    <form action="/update/contact" method="post" class="col-11 p-4 my-4 bg-dark text-light mx-auto">
+        {% with messages = get_flashed_messages(category_filter=["contact"]) %}
             {% if messages %}
             <div class="alert alert-danger" role="alert">
-                <strong>Invalid Input</strong>
+                <strong>Invalid input</strong>
                     {% for message in messages %}
                     <p>{{message}}</p>
                     {% endfor %}
@@ -27,30 +27,30 @@
             {% endif %}
         {% endwith %}
         <div class="d-flex justify-content-between col-9">
+            <input type="hidden" name="id" value={{edit.id}}>
             <div class="col-4">
-                <h2>Create New Contact</h2>
+                <h2>Edit {{edit.name}}</h2>
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="name">Contact Name:</label>
+                    <input type="text" name="name" class="form-control" value="{{edit.name}}">
                 </div>
                 <div class="form-group">
                     <label for="phone_number">Phone Number:</label>
-                    <input type="text" name="phone_number" class="form-control">
+                    <input name="phone_number" class="form-control" value="{{edit.phone_number}}">
                 </div>
                 <div class="form-group">
                     <label for="city">City:</label>
-                    <input type="text" name="city" class="form-control">
+                    <input type="text" name="city" value="{{edit.city}}" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="city">State:</label>
-                    <input type="text" name="state" class="form-control">
+                    <label for="state">State:</label>
+                    <input type="text" name="state" value="{{edit.state}}" class="form-control">
                 </div>
                 <!-- <div class="form-group">
-                    <input type="checkbox" name="vip">
+                    <input type="checkbox" name="vip" value="{{edit.vip}}">
                     <label for="vip">VIP</label>
                 </div> -->
-                <br>
-                <input type="submit" value="Create" class="btn btn-primary">
+                <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </div>
     </form>
