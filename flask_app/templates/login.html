@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <title>Login</title>
 </head>
 <body>
-    <div>
-        <h1>Welcome to Dolphin Directory</h1>
-        <form action="/login" method="post" class="col-4 p-4 bg-dark text-light">
-            <h2 class="text-success">Login</h2>
+    <!-- <img src="{{url_for('static', filename='img/dolphin3.png')}}" alt="" class="dolphin_3"> -->
+    <h1>Welcome to Dolphin Directory</h1>
+    <!-- <img src="{{url_for('static', filename='img/dolphin3.png')}}" alt="" class="dolphin_3"> -->
+    <div class="login">
+        <form action="/login" method="post" class="form">
+            <h2>Login</h2>
             {% with messages = get_flashed_messages(category_filter=["login"]) %}
                 {% if messages %}
                 <div class="alert alert-danger" role="alert">
@@ -22,17 +25,17 @@
                 </div>
                 {% endif %}
             {% endwith %}
-            <div class="form-group">
+            <div class="login_input">
                 <label for="email">Email:</label>
-                <input type="text" name="email" class="form-control">
+                <input type="text" name="email" class="input1">
             </div>
-            <div class="form-group">
+            <div class="login_input">
                 <label for="password">Password:</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="input2">
             </div>
-            <input type="submit" value="Sign in" class="btn btn-success">
+            <input type="submit" value="Sign in" class="sign_in_button">
+            <p>Not a member? <a href="signup">sign up</a></p>
         </form>
-        <p>Not a member? <a href="signup">sign up</a></p>
     </div>
 </body>
 </html>
