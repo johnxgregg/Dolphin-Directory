@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Hello {{user.first_name}}</h1>
+    <h2>Dolphin Directory</h2>
+    <h1>Hello {{user.first_name}} {{user.last_name}}</h1>
     <nav>
         <div class="nav">
             <a href="/logout" class="logout">Logout</a>
         </div>
     </nav>
     <h2 class="contact_dashboard">Your Contacts</h2>
-    <div class="container glass">
-        <table>
+    <div class="glass">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -28,8 +28,8 @@
                 </tr>
             </thead>
             <tbody>
-                    {% for contact in all_contacts %}
-                    <tr>
+                {% for contact in contacts %}
+                    <tr class="t_data">
                         <td>{{ contact.name }}</td>
                         <td>{{ contact.phone_number }}</td>
                         <td>{{ contact.city }} {{ contact.state }} </td>
@@ -39,15 +39,15 @@
                         </td>
                         <td>
                             {% if contact.user_id == session.user_id %}
-                            <a href="/edit/{{contact.id}}">Edit</a>
-                            <a href="/destroy/contact/{{contact.id}}">Delete</a>
-                        {% endif %}
+                            <a href="/edit/{{contact.id}}" class="edit">Edit</a>
+                            <a href="/destroy/contact/{{contact.id}}" class="delete">Delete</a>
+                            {% endif %}
                         </td>
                     </tr>
-                    {% endfor %}
+                {% endfor %}
             </tbody>
         </table>
-        <a href="/create" class="btn btn-primary">Create New Contact</a>
     </div>
+    <a href="/create" class="create_button">Create New Contact</a>
 </body>
 </html>

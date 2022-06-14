@@ -19,7 +19,6 @@ def new_contact():
 def create_contact():
     if "user_id" not in session:
         return redirect("/logout")
-    
     if not Contact.validate_contact(request.form):
         return redirect("/create")
     data = {
@@ -33,17 +32,17 @@ def create_contact():
     Contact.save(data)
     return redirect("/dashboard")
 
-@app.route("/mycontacts/<int:id>")
-def my_contacts(id):
-    if "user_id" not in session:
-        return redirect("/logout")
-    data = {
-        "id": session["user_id"]
-    }
-    user_data = {
-        "id":id
-    }
-    return render_template("dashboard.html",user=User.get_by_id(user_data),all_contacts=Contact.get_all())
+# @app.route("/mycontacts/<int:id>")
+# def my_contacts(id):
+#     if "user_id" not in session:
+#         return redirect("/logout")
+#     data = {
+#         "id": session["user_id"]
+#     }
+#     user_data = {
+#         "id":id
+#     }
+#     return render_template("dashboard.html",user=User.get_by_id(user_data), contacts=Contact.get_all(data))
 
 
 @app.route("/edit/<int:id>")

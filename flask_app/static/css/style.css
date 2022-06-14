@@ -5,19 +5,14 @@ body {
     background-position: center;
 }
 
-.container {
+/* .container {
     width: 900px;
     height: 600px;
     margin: 200px auto;
-}
+} */
 
 .glass {
-    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.37); */
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
@@ -25,6 +20,7 @@ body {
     height:500px;
     margin: 10px auto;
     background-color: rgb(7, 122, 153);
+    overflow-y: scroll;
 }
 
 .login {
@@ -33,7 +29,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
     width: 600px;
-    height:600px;
+    height:800px;
     margin: 10px auto;
     background-color: rgb(7, 122, 153);
 }
@@ -53,29 +49,18 @@ h1 {
     width: 100px;
     height: 50px;
     font-size: 25px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .login_input {
     display: flex;
     justify-content: center;
     margin: 50px;
 }
-/* .dolphin_3 {
-    margin: 0;
-    padding: 0;
-    border: 0; */
-    /* display: block;
-    margin: auto; */
-    /* position: relative;
-    top: -125px; */
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
-/* } */
 .input1 {
     border-radius: 10px;
     width: 200px;
     margin-right: 50px;
+    align-items: center;
 }
 .input2 {
     border-radius: 10px;
@@ -97,7 +82,7 @@ h1 {
     background-color:rgb(11, 7, 7);
     border-radius: 10px;
     width: 100px;
-    height: 50px;
+    height: 45px;
     font-size: 30px;
     text-decoration: none;
     text-align: center;
@@ -111,12 +96,107 @@ h1 {
     font-size: 25px;
     margin-top: 50px;
 }
-a {
-    text-decoration: none;
-}
 .input3 {
     border-radius: 10px;
     height: 30px;
     width: 200px;
     margin: 10px;
+}
+.table {
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+}
+thead {
+    font-size: 2rem;
+    position:sticky;
+}
+/* tbody {
+    background-color: white;
+    height: 35px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+} */
+.create_button {
+    padding: 20px;
+    display: inline-block;
+    vertical-align: auto;
+    margin-left: 300px;
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 215px;
+    height: 25px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.t_data {
+    background-color: white;
+    height: 35px;
+    font-size: 1.5rem;
+}
+/* td {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+} */
+.edit, .delete {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.container_glass_2 {
+    width: 900px;
+    height: 600px;
+    margin: 200px auto;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
+    width: 600px;
+    height:600px;
+    margin: 10px auto;
+    background-color: rgb(7, 122, 153);
+    text-align: center;
+    font-size: 2rem;
+}
+.create_input, .edit_input, .input1, .input3{
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    margin: 10px;
+}
+.home {
+    color: white;
+    background-color:rgb(11, 7, 7);
+    border-radius: 10px;
+    width: 100px;
+    height: 45px;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 20px;
+}
+/* .edit_input {
+    border-radius: 10px;
+    width: 200px;
+    margin-right: 50px;
+    height: 30px;
+    margin: 20px;
+} */
+th {
+    position: sticky;
+    top: 0;
+    background-color:grey;
+    height: 60px;
+}
+.form2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    
 }

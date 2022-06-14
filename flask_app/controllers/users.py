@@ -53,7 +53,7 @@ def dashboard():
     data ={
         'id': session['user_id']
     }
-    return render_template("dashboard.html",user=User.get_by_id(data), all_contacts=Contact.get_all())
+    return render_template("dashboard.html",user=User.get_by_id(data), contacts=Contact.get_all())
 
 
 @app.route('/logout')

@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-from flask_app.models import user
+# from flask_app.models import user
 
 class Contact:
     db = "dolphin_schema"
@@ -16,7 +16,6 @@ class Contact:
         self.updated_at = db_data["updated_at"]
         self.user = None
 
-
     @classmethod
     def save(cls,data):
         query = "INSERT INTO contacts (name, phone_number, city, state, user_id) VALUES (%(name)s,%(phone_number)s,%(city)s,%(state)s,%(user_id)s);"
@@ -26,10 +25,10 @@ class Contact:
     def get_all(cls):
         query = "SELECT * FROM contacts;"
         results =  connectToMySQL(cls.db).query_db(query)
-        all_contacts = []
+        contacts = []
         for row in results:
-            all_contacts.append( cls(row) )
-        return all_contacts
+            contacts.append( cls(row) )
+        return contacts
 
 
     @classmethod
