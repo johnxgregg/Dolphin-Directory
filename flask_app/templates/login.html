@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <title>Login</title>
 </head>
 <body>
-    <!-- <img src="{{url_for('static', filename='img/dolphin3.png')}}" alt="" class="dolphin_3"> -->
     <h1>Welcome to Dolphin Directory</h1>
-    <!-- <img src="{{url_for('static', filename='img/dolphin3.png')}}" alt="" class="dolphin_3"> -->
-    <div class="login">
+    <div class="login1">
         <form action="/login" method="post" class="form">
             <h2>Login</h2>
             {% with messages = get_flashed_messages(category_filter=["login"]) %}
@@ -34,7 +31,7 @@
                 </div>
             </div>
             <input type="submit" value="Sign in" class="sign_in_button">
-            <p>Not a member? <a href="signup">sign up</a></p>
+            <p>Not a member? <a href="signup" class="sign_up">sign up</a></p>
         </form>
     </div>
 </body>

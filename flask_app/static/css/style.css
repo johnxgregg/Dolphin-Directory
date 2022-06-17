@@ -4,15 +4,7 @@ body {
     background-size: 100%;
     background-position: center;
 }
-
-/* .container {
-    width: 900px;
-    height: 600px;
-    margin: 200px auto;
-} */
-
 .glass {
-    /* backdrop-filter: blur(20px); */
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
@@ -22,14 +14,23 @@ body {
     background-color: rgb(7, 122, 153);
     overflow-y: scroll;
 }
-
 .login {
     backdrop-filter: blur(20px);
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
     width: 600px;
-    height:800px;
+    height: 850px;
+    margin: 10px auto;
+    background-color: rgb(7, 122, 153);
+}
+.login1{
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
+    width: 600px;
+    height: 500px;
     margin: 10px auto;
     background-color: rgb(7, 122, 153);
 }
@@ -40,6 +41,9 @@ h1 {
 }
 .form {
     text-align: center;
+    font-size: 1rem;
+}
+.reg {
     font-size: 2rem;
 }
 .sign_in_button {
@@ -50,11 +54,12 @@ h1 {
     height: 50px;
     font-size: 25px;
     margin-top: 30px;
+    margin: 50px;
 }
 .login_input {
     display: flex;
     justify-content: center;
-    margin: 50px;
+    margin: 5px;
 }
 .input1 {
     border-radius: 10px;
@@ -103,22 +108,11 @@ h1 {
     margin: 10px;
 }
 .table {
-    border-collapse: separate;
     border-spacing: 0 20px;
     text-align: center;
     width: 100%;
-    padding: 15px;
+    padding: 10px;
 }
-thead {
-    font-size: 2rem;
-    position:sticky;
-}
-/* tbody {
-    background-color: white;
-    height: 35px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-} */
 .create_button {
     padding: 20px;
     display: inline-block;
@@ -138,30 +132,25 @@ thead {
     background-color: white;
     height: 35px;
     font-size: 1.5rem;
+    top: 0;
 }
-/* td {
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-} */
 .edit, .delete {
     text-decoration: none;
     color: black;
     font-size: 1.5rem;
 }
 .container_glass_2 {
-    width: 900px;
-    height: 600px;
     margin: 200px auto;
     backdrop-filter: blur(20px);
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 1);
     width: 600px;
-    height:600px;
+    height:820px;
     margin: 10px auto;
     background-color: rgb(7, 122, 153);
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .create_input, .edit_input, .input1, .input3{
     border-radius: 10px;
@@ -180,18 +169,12 @@ thead {
     text-align: center;
     margin-right: 20px;
 }
-/* .edit_input {
-    border-radius: 10px;
-    width: 200px;
-    margin-right: 50px;
-    height: 30px;
-    margin: 20px;
-} */
-th {
+.head {
     position: sticky;
     top: 0;
     background-color:grey;
     height: 60px;
+    font-size: 2rem;
 }
 .form2 {
     display: flex;
@@ -199,4 +182,38 @@ th {
     flex-direction: column;
     align-items: center;
     
+}
+.create_new {
+    font-size: 2rem;
+}
+.update {
+    font-size: 2rem;
+}
+.vip {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+.vip1 {
+    width: 25px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.back_btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    text-decoration: none;
+    color: black;
+}
+.create_vip {
+    font-size: 2rem;
+}
+.yes_no {
+    font-size: 1.5rem;
+    margin: 10px;
+}
+.sign_up {
+    text-decoration: none;
+    color: white;
 }

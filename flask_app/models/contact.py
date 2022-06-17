@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-# from flask_app.models import user
+from flask_app.models import user
 
 class Contact:
     db = "dolphin_schema"
@@ -10,7 +10,7 @@ class Contact:
         self.phone_number = db_data["phone_number"]
         self.city = db_data["city"]
         self.state = db_data["state"]
-        # self.vip = db_data["vip"]
+        self.vip = db_data["vip"]
         self.user_id = db_data["user_id"]
         self.created_at = db_data["created_at"]
         self.updated_at = db_data["updated_at"]
@@ -18,7 +18,7 @@ class Contact:
 
     @classmethod
     def save(cls,data):
-        query = "INSERT INTO contacts (name, phone_number, city, state, user_id) VALUES (%(name)s,%(phone_number)s,%(city)s,%(state)s,%(user_id)s);"
+        query = "INSERT INTO contacts (name, phone_number, city, state, vip, user_id) VALUES (%(name)s,%(phone_number)s,%(city)s,%(state)s,%(vip)s,%(user_id)s);"
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
@@ -39,7 +39,7 @@ class Contact:
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE contacts SET name=%(name)s, phone_number=%(phone_number)s, city=%(city)s, state=%(state)s, updated_at=NOW() WHERE id = %(id)s;"
+        query = "UPDATE contacts SET name=%(name)s, phone_number=%(phone_number)s, city=%(city)s, state=%(state)s, vip=%(vip)s, updated_at=NOW() WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query,data)
         
     @classmethod

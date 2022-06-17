@@ -26,23 +26,11 @@ def create_contact():
         "phone_number": request.form["phone_number"],
         "city": request.form["city"],
         "state": request.form["state"],
-        # "vip": request.form["vip"],
+        "vip": int(request.form["vip"]),
         "user_id": session["user_id"]
     }
     Contact.save(data)
     return redirect("/dashboard")
-
-# @app.route("/mycontacts/<int:id>")
-# def my_contacts(id):
-#     if "user_id" not in session:
-#         return redirect("/logout")
-#     data = {
-#         "id": session["user_id"]
-#     }
-#     user_data = {
-#         "id":id
-#     }
-#     return render_template("dashboard.html",user=User.get_by_id(user_data), contacts=Contact.get_all(data))
 
 
 @app.route("/edit/<int:id>")
@@ -69,7 +57,7 @@ def update_contact():
         "phone_number": request.form["phone_number"],
         "city": request.form["city"],
         "state": request.form["state"],
-        # "vip": request.form["vip"],
+        "vip": int(request.form["vip"]),
         "id": request.form["id"]
     }
     Contact.update(data)

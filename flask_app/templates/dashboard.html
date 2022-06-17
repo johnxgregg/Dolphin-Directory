@@ -19,7 +19,7 @@
     <div class="glass">
         <table class="table">
             <thead>
-                <tr>
+                <tr class="head">
                     <th>Name</th>
                     <th>Phone #</th>
                     <th>Location</th>
@@ -28,22 +28,23 @@
                 </tr>
             </thead>
             <tbody>
-                {% for contact in contacts %}
+                    {% for contact in contacts %}
+                    {% if contact.user_id == session.user_id %}
                     <tr class="t_data">
                         <td>{{ contact.name }}</td>
                         <td>{{ contact.phone_number }}</td>
-                        <td>{{ contact.city }} {{ contact.state }} </td>
+                        <td>{{ contact.city }}, {{ contact.state }} </td>
+                        {% if contact.vip == 1 %}
+                        <td>🌟</td>
+                        {% else %}
+                        <td>🚫</td>
+                        {% endif %}
                         <td>
-                            <!-- <input type="checkbox" {{ contact.vip }}> -->
-                            <!-- {{ contact.vip }} -->
-                        </td>
-                        <td>
-                            {% if contact.user_id == session.user_id %}
                             <a href="/edit/{{contact.id}}" class="edit">Edit</a>
                             <a href="/destroy/contact/{{contact.id}}" class="delete">Delete</a>
-                            {% endif %}
                         </td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
