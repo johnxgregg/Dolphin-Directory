@@ -64,6 +64,19 @@ def update_contact():
     return redirect("/dashboard")
 
 
+# @app.route('/vip_contact/<int:id>')
+# def show_vip(id):
+#     if 'user_id' not in session:
+#         return redirect('/logout')
+#     data = {
+#         "id":id
+#     }
+#     user_data = {
+#         "id":session['user_id']
+#     }
+#     return render_template("vip_list.html",contact=Contact.get_all(data),user=User.get_by_id(user_data))
+
+
 @app.route("/destroy/contact/<int:id>")
 def destroy_contact(id):
     if "user_id" not in session:
